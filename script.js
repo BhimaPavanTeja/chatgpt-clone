@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const deleteButton = document.querySelector("#delete-btn");
 
     let userText = null;
-    const API_KEY = "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";
+    const API_KEY = "YOUR_API_KEY";
 
     const loadDataFromLocalStorage = () => {
         chatContainer.innerHTML = localStorage.getItem("all-chats");
