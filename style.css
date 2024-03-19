@@ -1,0 +1,261 @@
+* {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.default-text {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+    padding: 0 10px;
+    color: white;
+    text-align: center;
+}
+
+.default-text h1 {
+    font-size: 3.3rem;
+}
+
+.default-text p {
+    font-size: 1.1rem;
+    margin-top: -30px;
+}
+
+body {
+    background-color: rgb(34, 35, 41);
+}
+
+img {
+    border-radius: 15px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+.chat-container {
+    max-height: 100vh;
+    padding-bottom: 150px;
+    overflow-y: auto;
+}
+
+:where(.chat-container, textarea)::-webkit-scrollbar {
+    width: 6px;
+}
+:where(.chat-container,textarea)::-webkit-scrollbar-track {
+    background-color: #444654;
+    border-radius: 25px;
+}
+:where(.chat-container, textarea)::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 25px;
+}
+
+.chat-container .chat {
+    color: white;
+    padding: 25px 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.chat-container .chat.in {
+    background-color: #444654;
+    border: 1px solid #4f4f4f;
+}
+
+#special {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #444654;
+}
+.chat .chat-box {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.chat .chat-message {
+    display: flex;
+    align-items: center;
+} 
+
+.chat .chat-message img {
+    align-self: flex-start;
+}
+
+.chat .chat-message p {
+    white-space: pre-wrap;
+    padding: 0 50px 0 25px;
+}
+
+.chat .chat-message p.error {
+    color: #e55865;
+}
+
+.chat-message {
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+span.material-symbols-outlined {
+    user-select: none;
+    cursor: pointer;
+}
+
+.chat .chat-box span {
+    font-size: 1.3rem;
+    visibility: hidden;
+}
+
+.chat:hover .chat-box:not(:has(.typing-animation)) span {
+    visibility: visible;
+}
+
+.typing-animation {
+    display: inline-flex;
+    padding-left: 25px;
+}
+
+.typing-animation .dot {
+    width: 7px;
+    height: 7px;
+    opacity: 0.7;
+    margin: 0 3px;
+    border-radius: 50%;
+    background-color: white;
+    animation: dots 1.5s var(--delay) ease-in-out infinite;
+}
+
+@keyframes dots {
+    0%, 44% {
+        transform: translateY(0px);
+    }
+    22% {
+        opacity: 0.2;
+        transform: translateY(-6px);
+    }
+    44% {
+        opacity: 0.2;
+    }
+}
+
+.input-box {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    padding: 20px 10px;
+    justify-content: center;
+    background-color: rgb(34, 35, 41);
+    border: 1px solid #4f4f4f;
+}
+
+.input-box .input-content {
+    max-width: 950px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.input-content .input-textarea {
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+
+.input-textarea textarea {
+    width: 100%;
+    height: 25px;
+    border: none;
+    resize: none;
+    outline: 0;
+    border-radius: 4px;
+    font-size: 1rem;
+    max-height: 150px;
+    overflow-y: auto;
+    padding: 15px 35px 15px 20px;
+    color: white;
+    background-color: #444654;
+}
+
+.input-content span {
+    height: 55px;
+    width: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.typing-controls {
+    display: flex;
+}
+
+.typing-controls span {
+    margin-left: 7px;
+    font-size: 1.4rem;
+    border-radius: 4px;
+    background-color: #444654;
+    border: 1px solid #444654;
+}
+
+.input-textarea span {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    visibility: hidden;
+}
+
+.input-textarea textarea:valid ~ span {
+    visibility: visible;
+}
+
+#send-btn:hover {
+    background-color: #7e938eaf;
+    border-radius: 100px;
+    cursor: pointer;
+}
+
+#light-mode-btn:hover {
+    background-color: rgb(42, 145, 111);
+}
+
+#delete-btn:hover {
+    background-color: #e55865;
+    border: 1px solid #e55865;
+}
+
+@media only screen and (max-width: 600px) {
+    .input-box {
+        padding: 10px 5px;
+    }
+
+    .input-content .input-textarea {
+        width: 100%;
+    }
+
+    .input-textarea textarea {
+        padding: 10px 20px;
+    }
+
+    .input-content span {
+        height: 45px;
+        width: 45px;
+    }
+
+    .typing-controls span {
+        margin-left: 5px;
+    }
+
+    .default-text {
+        margin-top: 80px;
+    }
+
+    .default-text h1 {
+        font-size: 2.5rem;
+    }
+}
